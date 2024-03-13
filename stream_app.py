@@ -22,18 +22,21 @@ if st.button("Выбрать случайно"):
 
         with col2:
 
+            # Заголовки полей жирным шрифтом
             st.markdown(
-                f"<h5 style='font-weight:bold;'>Название сериала: «{df['title'][i]}»</h5>",
+                "<h4 style='font-weight:bold;'>Название сериала:</h4>",
+                unsafe_allow_html=True,
+            )
+            # Данные обычным текстом
+            st.write(f"«{df['title'][i]}»")
+
+            st.markdown(
+                f"<h6 style='font-weight:bold;'>Страна: «{df['country'][i]}»</h6>",
                 unsafe_allow_html=True,
             )
 
             st.markdown(
-                f"<h5 style='font-weight:bold;'>Страна: «{df['country'][i]}»</h5>",
-                unsafe_allow_html=True,
-            )
-
-            st.markdown(
-                f"<h5 style='font-weight:bold;'>Год выпуска: «{df['year1'][i]}»</h5>",
+                f"<h6 style='font-weight:bold;'>Год выпуска: «{df['year1'][i]}»</h6>",
                 unsafe_allow_html=True,
             )
 
@@ -44,7 +47,7 @@ if st.button("Выбрать случайно"):
             )
 
             st.markdown(
-                "<h5 style='font-weight:bold;'>В ролях:</h5>", unsafe_allow_html=True
+                "<h6 style='font-weight:bold;'>В ролях:</h6>", unsafe_allow_html=True
             )
             st.write(df["cast1"][i])
 
