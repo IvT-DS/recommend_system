@@ -27,7 +27,7 @@ if st.button("Выбрать случайно"):
                 f"<h4 style='font-weight:bold;display:inline;'>Название сериала:</h4> {df['title'][i]}<br>"
                 f"<h6 style='font-weight:bold;display:inline;'>Страна:</h6> {df['country'][i]}<br>"
                 f"<h6 style='font-weight:bold;display:inline;'>Год выпуска:</h6> {df['year1'][i]}<br>"
-                f"<h6 style='font-weight:bold;display:inline;'>Жанр:</h6> {genre}<br>"
+                f"<h6 style='font-weight:bold;display:inline;'>Жанр:</h6> {genre}<br>",
                 unsafe_allow_html=True,
             )
 
