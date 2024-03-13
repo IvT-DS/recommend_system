@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
-df = pd.read_csv("data_mail.csv")
+df = pd.read_csv("kino_mail_proc.csv")
 random_digits = np.random.choice(len(df), size=10, replace=False)
 
 
@@ -28,15 +28,25 @@ if st.button("Выбрать случайно"):
             )
 
             st.markdown(
-                f"<h5 style='font-weight:bold;'>Год выпуска: «{df['title'][i]}»</h5>",
+                f"<h5 style='font-weight:bold;'>Страна: «{df['country'][i]}»</h5>",
                 unsafe_allow_html=True,
             )
 
-            genre = f"Нет данных" if pd.isna(df["ganres"].iloc[i]) else df["ganres"][i]
+            st.markdown(
+                f"<h5 style='font-weight:bold;'>Год выпуска: «{df['year1'][i]}»</h5>",
+                unsafe_allow_html=True,
+            )
+
+            genre = f"Нет данных" if pd.isna(df["genres"].iloc[i]) else df["genres"][i]
             st.markdown(
                 f"<h6 style='font-weight:bold;'>Жанр: {genre}</h6>",
                 unsafe_allow_html=True,
             )
+
+            st.markdown(
+                "<h5 style='font-weight:bold;'>В ролях:</h5>", unsafe_allow_html=True
+            )
+            st.write(df["cast1"][i])
 
             st.markdown(
                 "<h6 style='font-weight:bold;'>Описание:</h6>", unsafe_allow_html=True
